@@ -10,4 +10,4 @@ while number != 1:
     number= main(number)
     print(number)
     steps += 1
-print(f"total steps required: {steps}")
+print(f"total steps required: {steps}") 
