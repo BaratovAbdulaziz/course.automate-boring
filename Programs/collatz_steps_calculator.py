@@ -1,13 +1,15 @@
-number = int(input("Enter a number: "))
-steps = 0
-def main(number):
-    if number % 2 == 0:
-        return number //  2
-        
+current_value = int(input("Enter a number: "))
+step_count = 0
+
+def calculate_next_value(value):
+    if value % 2 == 0:
+        return value // 2
     else:
-        return number * 3 + 1;
-while number != 1:
-    number= main(number)
-    print(number)
-    steps += 1
-print(f"total steps required: {steps}") 
+        return value * 3 + 1
+
+while current_value != 1:
+    current_value = calculate_next_value(current_value)
+    print(current_value)
+    step_count += 1
+
+print(f"Total steps required: {step_count}")

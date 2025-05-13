@@ -1,39 +1,29 @@
 import sys
 from random import randint
-def RPS():
-    user = input("R/P/S")
-    Computer = randint(1,3)
-    # 1 = R 2 = P 3 = S
-    # Draw conditions
-    if user =="R" and Computer == "1":
-        print('DRAW')
-    elif user =="P" and Computer == 2:
-        print("DRAW")
-    elif user == "S" and Computer == 3:
-        print("DRAW")
-    elif user == "R":
-        if Computer == 3:
-            print("You win!")
-        else:
-            print("You lose!")
-    elif user == "P":
-        if Computer == 1:
-            print("You win!")
-        else:
-            print("You lose!")
-    elif user == "S":
-        if Computer == 2:
-            print("You win!")
-        else:
-            print("You lose!")
-    else:
+
+def play_rock_paper_scissors():
+    user_choice = input("Enter R, P, or S: ").upper()
+    computer_number = randint(1, 3)
+    computer_choice = "R" if computer_number == 1 else "P" if computer_number == 2 else "S"
+
+    if user_choice not in ("R", "P", "S"):
         print("Invalid input!")
-    status = input("are you going to play again?(y/n)")
-    if status == "y":
-        RPS()
-    elif status == "n":
+    elif user_choice == computer_choice:
+        print("DRAW")
+    elif (user_choice == "R" and computer_choice == "S") or \
+         (user_choice == "P" and computer_choice == "R") or \
+         (user_choice == "S" and computer_choice == "P"):
+        print("You win!")
+    else:
+        print("You lose!")
+
+    play_again = input("Do you want to play again? (y/n): ").lower()
+    if play_again == "y":
+        play_rock_paper_scissors()
+    elif play_again == "n":
         sys.exit()
     else:
-        print("???")
+        print("Invalid response. Exiting.")
         sys.exit()
-RPS()
+
+play_rock_paper_scissors()
