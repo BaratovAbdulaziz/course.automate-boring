@@ -59,10 +59,6 @@ python Programs/program_name.py
 
 ## Course Progress
 
-<div align="center">
-  <img src="https://automatetheboringstuff.com/" alt="Course Source"/>
-</div>
-
 The materials cover Python fundamentals, data structures, control flow, functions, object-oriented programming, and file handling.
 
 Future topics will include advanced Python concepts and practical applications.
