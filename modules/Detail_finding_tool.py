@@ -1,37 +1,6 @@
-import re
+#importing required modules
+import re,time,os
 from datetime import datetime
-
-# Check if value is an integer
-
-def num(value):
-    if isinstance(value, int):
-        print("True")
-    else:
-        print("False")
-
-# Check if value is a float
-
-def Float_num(value):
-    if isinstance(value, float):
-        print("True")
-    else:
-        print("False")
-
-# Check if value is a string
-
-def String(value):
-    if isinstance(value, str):
-        print("True")
-    else:
-        print("False")
-
-# Check if value is a boolean
-def Boolean(value):
-    if isinstance(value, bool):
-        print(True)
-    else:
-        print(False)
-
 # Extract phone numbers matching pattern like +123-456-7890
 
 def phone_number(text):
@@ -61,12 +30,49 @@ def any_date(text):
     date_strings = [f"{d[0]}.{d[1]}.{d[2]}" for d in date_result]
     print(", ".join(date_strings) if date_strings else "No dates found")
 
-# Birthday checker: compares input date to current date
+##################################################
+################||||| MENU ||||###################
+##################################################
+def Menu():
+    while True:
+    #content importing
+    
+        text = str(input(f"enter the content \n :"))
+    
+    #Timeout
+        time.sleep(1)
+        os.system("clear")
+        print("processing...")
+        time.sleep(1)
+        print("content imported successfully!!!")
+        time.sleep(1)
+        os.system("clear")
+        time.sleep(1)
+        print('''
+1. find phone numbers
+2. find emails
+3. find IP addresses
+4. extract dates
+"E" Exit''')
+        answer = input("(1/2/3/4):")
+        if answer == "1":
+            phone_number(text)
+            break
+        elif answer == "2":
+            Email(text)
+            break
 
-def Birthday(B_day, B_month, B_year):
-    current_date = datetime.now()
-    if current_date.day == B_day and current_date.month == B_month and current_date.year == B_year:
-        print("are you serious?")
-    else:
-        B_full_date = f"{B_day}.{B_month}.{B_year}"
-        any_date(B_full_date)
+        elif answer == "3":
+            ip_address(text)
+            break
+
+        elif answer == "4":
+            any_date(text)
+            break
+
+        elif answer.lower() == "e":
+            break
+
+        else:
+            print("Error 404")
+Menu()
