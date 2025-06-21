@@ -60,7 +60,7 @@ python Programs/program_name.py
 ## Course Progress
 
 <div align="center">
-  <img src="https://progress-bar.dev/70/?width=400&title=Course%20Completion" alt="Course Progress"/>
+  <img src="https://automatetheboringstuff.com/" alt="Course Source"/>
 </div>
 
 The materials cover Python fundamentals, data structures, control flow, functions, object-oriented programming, and file handling.
